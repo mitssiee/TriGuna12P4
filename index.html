@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tri Guna - Presentasi Kelompok 3</title>
+<style>
+  :root {
+    --kuning: #f9d71c;
+    --hijau: #4caf50;
+    --orange: #ff9800;
+    --background: #fffbea;
+    --text-dark: #333;
+    --text-light: #fff;
+    --border-radius: 12px;
+    --shadow: rgba(0,0,0,0.1);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0 20px 40px;
+    line-height: 1.6;
+  }
+
+  header {
+    background-color: var(--kuning);
+    color: var(--text-dark);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    box-shadow: 0 6px 15px var(--shadow);
+    margin-bottom: 40px;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+  }
+
+  header p {
+    margin-top: 12px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 1.2px;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px 50px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 20px var(--shadow);
+  }
+
+  h2 {
+    color: var(--hijau);
+    border-left: 8px solid var(--orange);
+    padding-left: 15px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+  }
+
+  h3 {
+    color: var(--orange);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 25px;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+  }
+
+  ul li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+  }
+
+  blockquote {
+    border-left: 5px solid var(--kuning);
+    background-color: #fff8b3;
+    padding: 15px 20px;
+    margin: 25px 0;
+    font-style: italic;
+    color: #665c00;
+    border-radius: 8px;
+  }
+
+  .color-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .color-box {
+    flex: 1 1 200px;
+    background-color: var(--kuning);
+    color: var(--text-dark);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px var(--shadow);
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+
+  .color-box.hijau {
+    background-color: var(--hijau);
+    color: var(--text-light);
+  }
+
+  .color-box.orange {
+    background-color: var(--orange);
+    color: var(--text-light);
+  }
+
+  .color-box h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+  }
+
+  .story {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .story img {
+    max-width: 280px;
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 15px var(--shadow);
+  }
+
+  .story-text {
+    flex: 1 1 300px;
+    font-size: 1.1rem;
+  }
+
+  .team {
+    margin-top: 50px;
+    background: var(--hijau);
+    color: var(--text-light);
+    padding: 25px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 15px var(--shadow);
+  }
+
+  .team h2 {
+    color: var(--text-light);
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .team ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-size: 1.1rem;
+  }
+
+  .team ul li {
+    background: var(--orange);
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    font-weight: 600;
+    color: var(--text-light);
+    min-width: 140px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    cursor: default;
+  }
+
+  .team ul li:hover {
+    background-color: #e67300;
+  }
+
+  footer {
+    text-align: center;
+    margin: 60px 0 20px;
+    color: var(--orange);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    main {
+      padding: 30px 25px;
+      margin: 0 10px;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+    }
+
+    .color-boxes {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .story {
+      flex-direction: column;
+    }
+
+    .story img, .story-text {
+      max-width: 100%;
+      flex: none;
+    }
+
+    .team ul {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Tri Guna</h1>
+  <p>Dipresentasikan oleh Kelompok 3</p>
+</header>
+
+<main>
+  <section>
+    <h2>Pengertian Tri Guna</h2>
+    <p><!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tri Guna - Presentasi Kelompok 3</title>
+<style>
+  :root {
+    --kuning: #f9d71c;
+    --hijau: #4caf50;
+    --orange: #ff9800;
+    --background: #fffbea;
+    --text-dark: #333;
+    --text-light: #fff;
+    --border-radius: 12px;
+    --shadow: rgba(0,0,0,0.1);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0 20px 40px;
+    line-height: 1.6;
+  }
+
+  header {
+    background-color: var(--kuning);
+    color: var(--text-dark);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    box-shadow: 0 6px 15px var(--shadow);
+    margin-bottom: 40px;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+  }
+
+  header p {
+    margin-top: 12px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 1.2px;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px 50px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 20px var(--shadow);
+  }
+
+  h2 {
+    color: var(--hijau);
+    border-left: 8px solid var(--orange);
+    padding-left: 15px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+  }
+
+  h3 {
+    color: var(--orange);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 25px;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+  }
+
+  ul li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+  }
+
+  blockquote {
+    border-left: 5px solid var(--kuning);
+    background-color: #fff8b3;
+    padding: 15px 20px;
+    margin: 25px 0;
+    font-style: italic;
+    color: #665c00;
+    border-radius: 8px;
+  }
+
+  .color-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .color-box {
+    flex: 1 1 200px;
+    background-color: var(--kuning);
+    color: var(--text-dark);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px var(--shadow);
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+
+  .color-box.hijau {
+    background-color: var(--hijau);
+    color: var(--text-light);
+  }
+
+  .color-box.orange {
+    background-color: var(--orange);
+    color: var(--text-light);
+  }
+
+  .color-box h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+  }
+
+  .story {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .story img {
+    max-width: 280px;
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 15px var(--shadow);
+  }
+
+  .story-text {
+    flex: 1 1 300px;
+    font-size: 1.1rem;
+  }
+
+  .team {
+    margin-top: 50px;
+    background: var(--hijau);
+    color: var(--text-light);
+    padding: 25px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 15px var(--shadow);
+  }
+
+  .team h2 {
+    color: var(--text-light);
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .team ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-size: 1.1rem;
+  }
+
+  .team ul li {
+    background: var(--orange);
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    font-weight: 600;
+    color: var(--text-light);
+    min-width: 140px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    cursor: default;
+  }
+
+  .team ul li:hover {
+    background-color: #e67300;
+  }
+
+  footer {
+    text-align: center;
+    margin: 60px 0 20px;
+    color: var(--orange);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    main {
+      padding: 30px 25px;
+      margin: 0 10px;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+    }
+
+    .color-boxes {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .story {
+      flex-direction: column;
+    }
+
+    .story img, .story-text {
+      max-width: 100%;
+      flex: none;
+    }
+
+    .team ul {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Tri Guna</h1>
+  <p>Dipresentasikan oleh Kelompok 3</p>
+</header>
+
+<main>
+  <section>
+    <h2>Pengertian Tri Guna</h2>
+    <p> Tri: Tiga 
+Guna: Sifat 
+tiga sifat atau watak dasar yang ada pada setiap makhluk di jagat raya, termasuk manusia, yang membentuk kepribadian dan perilaku. Sifat ini ada sejak kita dari lahir  </p>
+    <ul>
+      <li><strong>Sattva</strong> –  berarti mempunyai sifat yang benar. Di sini berarti sifat ringan bagi benda dan sifat baik bagi makhluk hidup. Dalam kehidupan manusia, apabila kecenderungan kepribadiannya dominan Sattwam, seseorang di sebut sebagai seorang Satwika Waikerta.</li>
+      <li><strong>Rajas</strong> – Tamas sifat yang menyebabkan segala mahluk di dalam kegelapan dan kemalasan.untuk benda mati Tamas ini berarti sifat yang menyebabkan benda itu lamban
+ </li>
+      <li><strong>Tamas</strong> arti Rajas dalam Tri Guna ini berarti sifat yang menjadi penggerak dari segala benda yang ada di alam semesta,dan bagi mahluk hidup berarti sifat yang memberi kekuatan untuk mengerjakan sesuatu
+ </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cerita Putra Siwa Berkepala Gajah</h2>
+    <div class="story">
+      <img src="https://cdn.pixabay.com/photo/2017/01/31/21/23/buddha-2027367_1280.jpg" alt="Ilustrasi Tri Guna" />
+      <div class="story-text">
+        <p>Makna cerita putra siwa berkepala gajah adalah dari ketidaktahuan lahir kesempatan untuk berubah menjadi bijaksana. Pada awalnya putra siwa bersiap keras kepala, penuh semangat melawan ayahnya dan setelah diberi kepala gajah ia menjadi lambang kebijaksanaan. Konsep Tri Guna berkepala gajah punya kaitan erat dengan konsep Tri Guna karena perjalanan dan makna simboliknya bisa ditafsirkan melalui Tri Guna </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Karakteristik Tri Guna</h2>
+    <div class="color-boxes">
+      <div class="color-box kuning">
+        <h4>Sattva</h4>
+        <p>Melambangkan kemurnian, kedamaian, dan keseimbangan. Orang dengan Sattva tinggi cenderung bijaksana, tenang, dan penuh kasih sayang.</p>
+      </div>
+      <div class="color-box hijau">
+        <h4>Rajas</h4>
+        <p>Melambangkan energi, gairah, dan aktivitas. Individu dengan Rajas tinggi biasanya aktif, ambisius, dan penuh semangat, namun bisa juga gelisah dan mudah marah.</p>
+      </div>
+      <div class="color-box orange">
+        <h4>Tamas</h4>
+        <p>Melambangkan kegelapan, kebodohan, dan kemalasan. Sifat ini menyebabkan ketidaktahuan, inersia, dan kecenderungan menunda-nunda.</p>
+      </div>
+    </div>
+    <h3>Detail Karakteristik</h3>
+    <ul>
+      <li><strong>Sattva:</strong> Jernih, damai, penuh kasih, bijaksana, dan harmonis.</li>
+      <li><strong>Rajas:</strong> Dinamis, penuh gairah, ambisius, mudah gelisah, dan aktif.</li>
+      <li><strong>Tamas:</strong> Malas, bingung, pasif, tidak fokus, dan cenderung negatif.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Peran Tri Guna dalam Kehidupan</h2>
+    <p>Tri Guna sangat relevan dalam kehidupan sehari-hari. Setiap orang memiliki ketiga guna ini dalam proporsi berbeda yang mempengaruhi sikap dan perilaku.</p>
+    <h3>Contoh Perilaku</h3>
+    <ul>
+      <li><strong>Sattva:</strong> Memilih makanan sehat, meditasi, berbuat baik, dan menjaga pikiran positif.</li>
+      <li><strong>Rajas:</strong> Bekerja keras, berkompetisi, dan berinovasi.</li>
+      <li><strong>Tamas:</strong> Menunda pekerjaan, bermalas-malasan, dan menghindari tanggung jawab.</li>
+    </ul>
+    <blockquote>
+      "Dengan memahami Tri Guna, kita dapat mengenali sifat diri dan berusaha meningkatkan Sattva untuk mencapai keseimbangan dan kebahagiaan sejati."
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>Pengelolaan Tri Guna</h2>
+    <p>Untuk mencapai keseimbangan hidup, penting mengelola ketiga guna ini:</p>
+    <ul>
+      <li><strong>Meningkatkan Sattva:</strong> Melalui meditasi, yoga, pola makan sehat, dan lingkungan positif.</li>
+      <li><strong>Menyeimbangkan Rajas:</strong> Mengarahkan energi secara konstruktif tanpa menjadi gelisah atau agresif.</li>
+      <li><strong>Meminimalkan Tamas:</strong> Menghindari malas dan pikiran negatif dengan disiplin dan kesadaran diri.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Kesimpulan</h2>
+    <p>Tri Guna terdiri atas Satwam, Rajas, dan Tamas yang membentuk watak manusia. Satwam berciri suci, bijaksana, jujur, dan tenang, misalnya orang yang sabar serta suka menolong. Rajas menonjolkan ambisi, semangat, dan kerja keras, tetapi sering disertai kegelisahan, contohnya orang yang rajin berusaha meraih prestasi namun mudah kecewa bila gagal. Tamas ditandai kemalasan, kebodohan, dan acuh, seperti orang yang enggan belajar, suka menunda, dan tidak peduli lingkungan. Untuk menyeimbangkan ketiganya, Satwam perlu dikembangkan lewat pendidikan, disiplin, dan pengendalian diri, Rajas diarahkan pada tujuan positif agar energi tidak sia-sia, sedangkan Tamas dikurangi dengan menjauhi kebiasaan malas, memperbanyak kegiatan bermanfaat, dan menjaga kejernihan pikiran.</p>
+    <p>Semoga presentasi ini bermanfaat dalam perjalanan pengembangan diri dan spiritual kita semua.</p>
+  </section>
+
+  <section class="team">
+    <h2>Anggota Tim Kelompok 3</h2>
+    <ul>
+      <li> Gung Rama [02] </li>
+      <li>Diego [11]</li>
+      <li>Dayu Widya [14]</li>
+      <li>Mira [19] </li>
+      <li> Bunga [21] </li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Kelompok 3 - Tri Guna
+</footer>
+</body>
+</html>
